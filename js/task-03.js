@@ -20,28 +20,58 @@ const images = [
 ];
 
 const galleryEl = document.querySelector('#gallery');
-const createdTagEl = document.createElement('img');
+galleryEl.style.display = 'flex';
+galleryEl.style.flexDirection = 'row';
+galleryEl.style.justifyContent = 'space-around';
 
 
 const createGallery = (array) => {
-    array.forEach(image => {
-    galleryEl.insertAdjacentHTML('afterbegin', '<li></li>');
-        const galleryItemEl = galleryEl.querySelector('li');
-        galleryItemEl.style.listStyle = 'none';
-        galleryEl.style.display = 'flex';
-        galleryEl.style.flexDirection = 'row';
-        galleryEl.style.justifyContent = 'space-around';
+  let galleryItemEl;
+  let galleryItemsArryEl = [];
+  array.forEach(({url, alt}) => {
+      galleryItemEl = document.createElement('li');
+      galleryItemEl.style.listStyle = 'none';
+      galleryItemEl.insertAdjacentHTML('afterbegin', '<img></img>');
 
-    const createdTagEl = document.createElement('img');
-    galleryItemEl.append(createdTagEl);
-    createdTagEl.setAttribute('src', image.url);
-    createdTagEl.setAttribute('alt', image.alt);
-    createdTagEl.setAttribute('height', '150');
-    createdTagEl.setAttribute('width', '300');
+      const insertedTagEl = galleryItemEl.querySelector('img');
+      insertedTagEl.setAttribute('src', url);
+      insertedTagEl.setAttribute('alt', alt);
+      insertedTagEl.setAttribute('height', '150');
+      insertedTagEl.setAttribute('width', '300');
         
+      galleryItemsArryEl.push(galleryItemEl);
     });
 
-    return galleryEl;
+    return galleryItemsArryEl;
 }
 
-console.log(createGallery(images));
+const result = createGallery(images);
+galleryEl.append(...result);
+console.log(galleryEl);
+
+
+// -------------------Вариант 2-------------------------------
+// const createGallery = (array) => {
+//     array.forEach(image => {
+//     galleryEl.insertAdjacentHTML('afterbegin', '<li></li>');
+//         const galleryItemEl = galleryEl.querySelector('li');
+//         galleryItemEl.style.listStyle = 'none';
+//         galleryEl.style.display = 'flex';
+//         galleryEl.style.flexDirection = 'row';
+//         galleryEl.style.justifyContent = 'space-around';
+
+//     const createdTagEl = document.createElement('img');
+//     galleryItemEl.append(createdTagEl);
+//     createdTagEl.setAttribute('src', image.url);
+//     createdTagEl.setAttribute('alt', image.alt);
+//     createdTagEl.setAttribute('height', '150');
+//     createdTagEl.setAttribute('width', '300');
+        
+//     });
+
+//     return galleryEl;
+// }
+
+// console.log(createGallery(images));
+
+
