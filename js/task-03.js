@@ -36,8 +36,8 @@ const createGallery = (array) => {
     galleryItemEl.append(createdTagEl);
     createdTagEl.setAttribute('src', image.url);
     createdTagEl.setAttribute('alt', image.alt);
-    createdTagEl.setAttribute('height', '300');
-    createdTagEl.setAttribute('width', '500');
+    createdTagEl.setAttribute('height', '150');
+    createdTagEl.setAttribute('width', '300');
         
     });
 
