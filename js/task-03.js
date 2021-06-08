@@ -26,10 +26,9 @@ galleryEl.style.justifyContent = 'space-around';
 
 
 const createGallery = (array) => {
-  let galleryItemEl;
   let galleryItemsArryEl = [];
   array.forEach(({url, alt}) => {
-      galleryItemEl = document.createElement('li');
+      let galleryItemEl = document.createElement('li');
       galleryItemEl.style.listStyle = 'none';
       galleryItemEl.insertAdjacentHTML('afterbegin', '<img></img>');
 
