@@ -10,15 +10,22 @@ const inputEl = document.querySelector('#validation-input');
 const dataAtributeValue = inputEl.dataset.length;
 
 inputEl.addEventListener('blur', onInputBlur);
+// inputEl.addEventListener('click', onInputClear);
 
 function onInputBlur(event) {
     if (event.currentTarget.value.length > dataAtributeValue || event.currentTarget.value.length < dataAtributeValue) {
-        inputEl.classList.add('invalid');
-        
+        inputEl.classList.toggle('invalid');
+        inputEl.classList.replace('valid', 'invalid');
+
     } else {
-        inputEl.classList.add('valid');
+        inputEl.classList.toggle('valid');
+        inputEl.classList.replace('invalid', 'valid');
     }
 };
+
+
+
+
 
 
 
