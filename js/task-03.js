@@ -49,28 +49,5 @@ galleryEl.append(...result);
 console.log(galleryEl);
 
 
-// -------------------Вариант 2-------------------------------
-// const createGallery = (array) => {
-//     array.forEach(image => {
-//     galleryEl.insertAdjacentHTML('afterbegin', '<li></li>');
-//         const galleryItemEl = galleryEl.querySelector('li');
-//         galleryItemEl.style.listStyle = 'none';
-//         galleryEl.style.display = 'flex';
-//         galleryEl.style.flexDirection = 'row';
-//         galleryEl.style.justifyContent = 'space-around';
-
-//     const createdTagEl = document.createElement('img');
-//     galleryItemEl.append(createdTagEl);
-//     createdTagEl.setAttribute('src', image.url);
-//     createdTagEl.setAttribute('alt', image.alt);
-//     createdTagEl.setAttribute('height', '150');
-//     createdTagEl.setAttribute('width', '300');
-        
-//     });
-
-//     return galleryEl;
-// }
-
-// console.log(createGallery(images));
 
 

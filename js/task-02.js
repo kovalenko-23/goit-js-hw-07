@@ -14,46 +14,17 @@ const ingredients = [
 const ingridientsEl = document.querySelector('#ingredients');
 
 const createItemOfUl = (array) => {
-    let ingredientsItemEl;
+  let ingredientsItemEl;
+  let arrayOfElements = [];
     array.forEach((element,idx) => {
-        ingredientsItemEl = document.createElement('li');
-        ingredientsItemEl.textContent = element;
-        ingridientsEl.append(ingredientsItemEl);
+      ingredientsItemEl = document.createElement('li');
+      ingredientsItemEl.textContent = element;
+      arrayOfElements.push(ingredientsItemEl);
     });
         
-    return ingridientsEl;
+    return arrayOfElements;
 }
 
-console.log(createItemOfUl(ingredients));
-
-
-// Считаеться ли вариант ниже валидным?
-// const ingredientsItemEl1 = document.createElement('li');
-// ingredientsItemEl1.textContent = 'Картошка';
-
-// const ingredientsItemEl2 = document.createElement('li');
-// ingredientsItemEl2.textContent = 'Грибы';
-
-// const ingredientsItemEl3 = document.createElement('li');
-// ingredientsItemEl3.textContent = 'Чеснок';
-
-// const ingredientsItemEl4 = document.createElement('li');
-// ingredientsItemEl4.textContent = 'Помидоры';
-
-// const ingredientsItemEl5 = document.createElement('li');
-// ingredientsItemEl5.textContent = 'Зелень';
-
-// const ingredientsItemEl6 = document.createElement('li');
-// ingredientsItemEl6.textContent = 'Приправы';
-
-// const ingridientsEl = document.querySelector('#ingredients');
-
-// ingridientsEl.append(ingredientsItemEl1, ingredientsItemEl2, ingredientsItemEl3,
-// ingredientsItemEl4, ingredientsItemEl5, ingredientsItemEl6);
-
-
-// console.log(ingredientsItemEl2);
-
-// console.log(ingridientsEl);
-
+let result = createItemOfUl(ingredients);
+ingridientsEl.append(...result);
 

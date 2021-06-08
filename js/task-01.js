@@ -34,10 +34,3 @@ const getTitleAndAmountEl = (array) => {
 
 console.log(getTitleAndAmountEl(arrayItems));
 
-
-// const titleEl = allItemsEl[0].querySelector('h2').textContent;
-// const amountOfEl = allItemsEl[0].querySelectorAll('li').length;
-// const titleAndAmount = `Категория: ${titleEl} 
-// Количество элементов: ${amountOfEl}`;
-// console.log(titleAndAmount);
-

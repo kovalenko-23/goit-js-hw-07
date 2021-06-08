@@ -10,7 +10,6 @@ const inputEl = document.querySelector('#validation-input');
 const dataAtributeValue = inputEl.dataset.length;
 
 inputEl.addEventListener('blur', onInputBlur);
-// inputEl.addEventListener('focus', onInputFocus);
 
 function onInputBlur(event) {
     if (event.currentTarget.value.length > dataAtributeValue || event.currentTarget.value.length < dataAtributeValue) {
