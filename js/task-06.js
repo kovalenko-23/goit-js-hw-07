@@ -8,17 +8,16 @@
 
 const inputEl = document.querySelector('#validation-input');
 const dataAtributeValue = inputEl.dataset.length;
+console.log(dataAtributeValue);
 
 inputEl.addEventListener('blur', onInputBlur);
-// inputEl.addEventListener('click', onInputClear);
 
 function onInputBlur(event) {
     if (event.currentTarget.value.length > dataAtributeValue || event.currentTarget.value.length < dataAtributeValue) {
-        inputEl.classList.toggle('invalid');
-        inputEl.classList.replace('valid', 'invalid');
-
+        inputEl.classList.add('invalid');
+        inputEl.classList.replace('valid', 'invalid');        
     } else {
-        inputEl.classList.toggle('valid');
+        inputEl.classList.add('valid');
         inputEl.classList.replace('invalid', 'valid');
     }
 };
