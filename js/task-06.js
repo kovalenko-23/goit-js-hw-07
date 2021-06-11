@@ -7,20 +7,24 @@
 
 
 const inputEl = document.querySelector('#validation-input');
-const dataAtributeValue = inputEl.dataset.length;
+const dataAtributeValue = Number(inputEl.dataset.length);
 console.log(dataAtributeValue);
 
 inputEl.addEventListener('blur', onInputBlur);
 
 function onInputBlur(event) {
-    if (event.currentTarget.value.length > dataAtributeValue || event.currentTarget.value.length < dataAtributeValue) {
-        inputEl.classList.add('invalid');
-        inputEl.classList.replace('valid', 'invalid');        
+    const isValid = event.currentTarget.value.length === dataAtributeValue;
+    if (isValid) {
+        setValidClass('valid', 'invalid');
     } else {
-        inputEl.classList.add('valid');
-        inputEl.classList.replace('invalid', 'valid');
+        setValidClass('invalid', 'valid');
     }
 };
+
+function setValidClass (classToAdd, classToRemove) {
+    inputEl.classList.add(classToAdd);
+    inputEl.classList.remove(classToRemove);
+}
 
 
 

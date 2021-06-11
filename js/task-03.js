@@ -23,30 +23,23 @@ const galleryEl = document.querySelector('#gallery');
 galleryEl.style.display = 'flex';
 galleryEl.style.flexDirection = 'row';
 galleryEl.style.justifyContent = 'space-around';
+galleryEl.style.listStyle = 'none';
 
 
 const createGallery = (array) => {
   let galleryItemsArryEl = [];
   array.forEach(({url, alt}) => {
-      let galleryItemEl = document.createElement('li');
-      galleryItemEl.style.listStyle = 'none';
-      galleryItemEl.insertAdjacentHTML('afterbegin', '<img></img>');
-
-      const insertedTagEl = galleryItemEl.querySelector('img');
-      insertedTagEl.setAttribute('src', url);
-      insertedTagEl.setAttribute('alt', alt);
-      insertedTagEl.setAttribute('height', '150');
-      insertedTagEl.setAttribute('width', '300');
-        
+      let galleryItemEl = `<li><img src='${url}' alt='${alt}' height='150' width='300'></img></li>`;
       galleryItemsArryEl.push(galleryItemEl);
     });
-
     return galleryItemsArryEl;
 }
 
-const result = createGallery(images);
-galleryEl.append(...result);
-console.log(galleryEl);
+const result = createGallery(images).join('');
+galleryEl.insertAdjacentHTML('afterbegin', result);
+
+
+
 
 
 
