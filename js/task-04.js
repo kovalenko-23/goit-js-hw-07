@@ -20,5 +20,6 @@ incrementBtn.addEventListener('click', () => {
 });
 
 
+
 console.log(counterValue);
 

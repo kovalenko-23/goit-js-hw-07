@@ -10,25 +10,24 @@
 //  - Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 //  - Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-const divBoxesEl = document.querySelector('#controls');
-const inputEl = divBoxesEl.querySelector('input');
-const renderBtnEl = divBoxesEl.querySelector('[data-action="render"]');
-const destroyBtnEl = divBoxesEl.querySelector('[data-action="destroy"]');
+const divBoxesEl = document.querySelector('#boxes');
+const controlsEl = document.querySelector('#controls');
+const inputEl = controlsEl.querySelector('input');
+const renderBtnEl = controlsEl.querySelector('[data-action="render"]');
+const destroyBtnEl = controlsEl.querySelector('[data-action="destroy"]');
 
 inputEl.addEventListener('input', onInputChange);
 renderBtnEl.addEventListener('click', onBtnRenderClk);
 destroyBtnEl.addEventListener('click', destroyBoxes);
 
 function onInputChange(event) {
-    event.currentTarget.value;
+    createBoxes(event);
 }
 
-const resultOfInput = onInputChange();
-
-console.log(resultOfInput);
 
 function onBtnRenderClk(event) {
     event.currentTarget;
+    console.log( event.currentTarget);
 }
 
 function destroyBoxes(event) {
@@ -36,14 +35,13 @@ function destroyBoxes(event) {
     
 }
 
-// function createBoxes(amount) {
-//     amount.forEach(element => {
-//         console.log(element);
-//     });
-// }
+function createBoxes(event) {
+    divBoxesEl.createElement('div');
+}
 
-// console.log(createBoxes(onInputChange()));
+console.log(divBoxesEl);
 
+// console.log(createBoxes());
 
 // createBoxes(amount)
 // 1) по принятой цифре создает соответсвующее количество боксов(div)
